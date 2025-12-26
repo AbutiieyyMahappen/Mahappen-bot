@@ -1,6 +1,6 @@
 # 🤖 Mahappen-bot
 
-***This a bot doesn't support phone number due to failing quick only QR code is working.🤍i will try to fix that in V1.1.3***
+***This bot doesn't support phone number due to failing quick only QR code is working.🤍i will try to fix that in V1.1.3***
 
 ---
 
