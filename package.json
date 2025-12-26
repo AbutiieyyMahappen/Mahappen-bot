@@ -1,0 +1,16 @@
+{
+  "name": "mahappen-bot",
+  "version": "1.0.0",
+  "description": "Mahappen WhatsApp Bot built with Baileys",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Abutieyy Mahappen",
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.0",
+    "pino": "^8.17.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

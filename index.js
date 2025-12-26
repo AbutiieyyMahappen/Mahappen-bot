@@ -1,0 +1,91 @@
+const {
+  default: makeWASocket,
+  useMultiFileAuthState,
+  DisconnectReason
+} = require("@whiskeysockets/baileys");
+
+const P = require("pino");
+const qrcode = require("qrcode-terminal");
+
+/* 👑 OWNER NUMBER */
+const OWNER_NUMBER = "27687085163@s.whatsapp.net";
+const PREFIX = "/";
+
+async function startBot() {
+  const { state, saveCreds } = await useMultiFileAuthState("auth");
+
+  const sock = makeWASocket({
+    logger: P({ level: "silent" }),
+    auth: state,
+    browser: ["Mahappen-bot", "Chrome", "1.0.0"]
+  });
+
+  sock.ev.on("creds.update", saveCreds);
+
+  sock.ev.on("connection.update", (update) => {
+    const { connection, lastDisconnect, qr } = update;
+
+    if (qr) {
+      console.log("📱 Scan this QR with WhatsApp");
+      qrcode.generate(qr, { small: true });
+    }
+
+    if (connection === "open") {
+      console.log("✅ Mahappen-bot Connected");
+      console.log("👑 Developer: Abutieyy Mahappen");
+    }
+
+    if (connection === "close") {
+      const shouldReconnect =
+        lastDisconnect?.error?.output?.statusCode !==
+        DisconnectReason.loggedOut;
+
+      if (shouldReconnect) startBot();
+      else console.log("❌ Logged out. Delete auth folder & restart.");
+    }
+  });
+
+  sock.ev.on("messages.upsert", async ({ messages }) => {
+    const msg = messages[0];
+    if (!msg.message || msg.key.fromMe) return;
+
+    const text =
+      msg.message.conversation ||
+      msg.message.extendedTextMessage?.text;
+
+    if (!text || !text.startsWith(PREFIX)) return;
+
+    const command = text.slice(1).trim().toLowerCase();
+    const from = msg.key.remoteJid;
+    const sender = msg.key.participant || from;
+    const isOwner = sender === OWNER_NUMBER;
+
+    if (command === "menu") {
+      return sock.sendMessage(from, {
+        text: `🤖 *Mahappen-bot Menu*
+/ping
+/owner
+/menu`
+      });
+    }
+
+    if (command === "ping") {
+      return sock.sendMessage(from, { text: "🏓 Pong! Mahappen-bot is alive" });
+    }
+
+    if (command === "owner") {
+      return sock.sendMessage(from, {
+        text: `👑 *Developer*
+Abutieyy Mahappen
+GitHub: https://github.com/AbutiieyyMahappen`
+      });
+    }
+
+    if (command === "shutdown" && isOwner) {
+      await sock.sendMessage(from, { text: "🛑 Shutting down Mahappen-bot" });
+      process.exit(0);
+    }
+  });
+}
+
+startBot();
