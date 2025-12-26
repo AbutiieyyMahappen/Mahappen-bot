@@ -2,11 +2,14 @@
 
 ***This bot doesn't support phone number due to failing quick only QR code is working.🤍i will try to fix that in V1.1.3***
 
+***NB:When you use this bot wait about 5/6sec to receive your QR CODE***
+
 ---
 
 ****👑 Developer***
 
 ***Abutieyy Mahappen***
+***2025 Made with love***
 
 <p align="center">
   <a href="https://facebook.com/your-facebook-username">
