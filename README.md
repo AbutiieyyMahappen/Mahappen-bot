@@ -2,7 +2,7 @@
 
 A simple and clean WhatsApp bot built with **Node.js** and **Baileys**.  
 Created for learning, automation, and fun 🚀
-this annoying bot doesn't support phone due to failing quick.only qr code is working.🤍
+**this annoying bot doesn't support phone due to failing quick.only qr code is working.**🤍
 
 ---
 
