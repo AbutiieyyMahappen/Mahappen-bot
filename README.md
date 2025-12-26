@@ -23,22 +23,22 @@
 ---
 
 ## ⚠️ Disclaimer
-**This bot is for** **educational purposes only**.  
-**Do **NOT** use it for spam, harassment, or to violate WhatsApp policies**.
+***This bot is for*** ***educational purposes only***.  
+***Do ***NOT*** use it for spam, harassment, or to violate WhatsApp policies***.
 
 ---
 
 ##  Requirements
-- Android phone
-- Termux
-- Node.js
-- Internet connection
-- WhatsApp account
+- ***Android phone***
+- ***Termux***
+- ***Node.js***
+- ***Internet connection***
+- ***WhatsApp account***
 
 ---
 
 ## Installation (Termux)
-**copy step by step**
+***copy step by step***
 ```bash
 pkg update && pkg upgrade -y
 pkg install git nodejs -y
