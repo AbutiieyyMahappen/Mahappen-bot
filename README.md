@@ -2,6 +2,7 @@
 
 A simple and clean WhatsApp bot built with **Node.js** and **Baileys**.  
 Created for learning, automation, and fun 🚀
+this annoying bot doesn't support phone due to failing quick.only qr code is working.🤍
 
 ---
 
@@ -29,7 +30,7 @@ Do **NOT** use it for spam, harassment, or to violate WhatsApp policies.
 
 ---
 
-## 📱 Requirements
+##  Requirements
 - Android phone
 - Termux
 - Node.js
@@ -38,8 +39,8 @@ Do **NOT** use it for spam, harassment, or to violate WhatsApp policies.
 
 ---
 
-## 🛠 Installation (Termux)
-
+## Installation (Termux)
+copy step by step
 ```bash
 pkg update && pkg upgrade -y
 pkg install git nodejs -y
