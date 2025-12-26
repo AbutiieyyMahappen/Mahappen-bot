@@ -1,3 +1,4 @@
+console.log("🚀 Mahappen-bot file started");
 const {
   default: makeWASocket,
   useMultiFileAuthState,
@@ -17,9 +18,7 @@ async function startBot() {
   const sock = makeWASocket({
     logger: P({ level: "silent" }),
     auth: state,
-    browser: ["Mahappen-bot", "Ubuntu", "1.0.0"],
-    syncFullHistory: false,
-    generateHighQualityLinkPreview: false
+    browser: ["Mahappen-bot", "Chrome", "1.0.0"]
   });
 
   sock.ev.on("creds.update", saveCreds);
@@ -42,12 +41,8 @@ async function startBot() {
         lastDisconnect?.error?.output?.statusCode !==
         DisconnectReason.loggedOut;
 
-      if (shouldReconnect) {
-        console.log("♻️ Reconnecting...");
-        startBot();
-      } else {
-        console.log("❌ Logged out. Delete auth folder & restart.");
-      }
+      if (shouldReconnect) startBot();
+      else console.log("❌ Logged out. Delete auth folder & restart.");
     }
   });
 
@@ -76,9 +71,7 @@ async function startBot() {
     }
 
     if (command === "ping") {
-      return sock.sendMessage(from, {
-        text: "🏓 Pong! Mahappen-bot is alive"
-      });
+      return sock.sendMessage(from, { text: "🏓 Pong! Mahappen-bot is alive" });
     }
 
     if (command === "owner") {
@@ -90,9 +83,7 @@ GitHub: https://github.com/AbutiieyyMahappen`
     }
 
     if (command === "shutdown" && isOwner) {
-      await sock.sendMessage(from, {
-        text: "🛑 Shutting down Mahappen-bot"
-      });
+      await sock.sendMessage(from, { text: "🛑 Shutting down Mahappen-bot" });
       process.exit(0);
     }
   });
