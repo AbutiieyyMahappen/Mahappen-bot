@@ -23,6 +23,30 @@ Created for learning, automation, and fun 🚀
 
 ---
 
+## 📲 Apps Required
+
+To use and manage **Mahappen-bot**, you will need the following apps installed:
+
+- 📱 **WhatsApp**  
+  Used to scan the QR code or link the bot via *Linked Devices*
+
+- 🧪 **Termux**  
+  Used to install dependencies, edit code, and run the bot  
+  👉 https://f-droid.org/packages/com.termux/
+
+- 🌐 **GitHub App / GitHub Website**  
+  Used to store, update, and manage the bot source code  
+  👉 https://github.com/
+
+- 🌍 **Internet Browser (Chrome / Firefox)**  
+  Used for GitHub, documentation, and token creation
+
+---
+
+💡 **Note:**  
+All bot development and testing is done inside **Termux**.  
+Changes only go online when you manually push them to GitHub.
+
 ## ⚠️ Disclaimer
 This bot is for **educational purposes only**.  
 Do **NOT** use it for spam, harassment, or to violate WhatsApp policies.
