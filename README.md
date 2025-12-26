@@ -1,8 +1,6 @@
 # 🤖 Mahappen-bot
 
-A simple and clean WhatsApp bot built with **Node.js** and **Baileys**.  
-Created for learning, automation, and fun 🚀
-**this annoying bot doesn't support phone due to failing quick.only qr code is working.**🤍
+***This a bot doesn't support phone number due to failing quick only QR code is working.🤍i will try to fix that in V1.1.3***
 
 ---
 
